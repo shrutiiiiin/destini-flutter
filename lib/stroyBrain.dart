@@ -45,4 +45,5 @@ class StoryBrain {
   }
 
   int storyNum = 0;
+  void nextstory(int userchoice) {}
 }

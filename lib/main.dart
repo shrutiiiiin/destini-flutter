@@ -34,7 +34,7 @@ class destination extends StatelessWidget {
                     padding: const EdgeInsets.all(16.0),
                     child: Text(
                       storyBrain.getStory(),
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.white, fontSize: 18),
                     ),
                   ),
                 ),
@@ -44,8 +44,13 @@ class destination extends StatelessWidget {
                   padding: const EdgeInsets.all(23.0),
                   child: TextButton(
                     style: TextButton.styleFrom(backgroundColor: Colors.red),
-                    onPressed: () {},
-                    child: Text(storyBrain.getchoice1()),
+                    onPressed: () {
+                      storyBrain.nextstory(1);
+                    },
+                    child: Text(
+                      storyBrain.getchoice1(),
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                 ),
               ),
@@ -54,8 +59,13 @@ class destination extends StatelessWidget {
                   padding: const EdgeInsets.all(23.0),
                   child: TextButton(
                     style: TextButton.styleFrom(backgroundColor: Colors.blue),
-                    onPressed: () {},
-                    child: Text(storyBrain.getchoice2()),
+                    onPressed: () {
+                      storyBrain.nextstory(2);
+                    },
+                    child: Text(
+                      storyBrain.getchoice2(),
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                 ),
               ),
