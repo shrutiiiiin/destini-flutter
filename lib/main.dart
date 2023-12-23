@@ -12,11 +12,14 @@ class destination extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: Container(
-          child: Image(
-       image: AssetImage('images/background.png'),
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("images/background.png"),
+              fit: BoxFit.cover,
+            ),
           ),
         ),
       ),
-    ),
+    );
   }
 }
