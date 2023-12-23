@@ -41,24 +41,22 @@ class destination extends StatelessWidget {
               ),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Center(
-                      child: TextButton(
+                  padding: const EdgeInsets.all(23.0),
+                  child: TextButton(
                     style: TextButton.styleFrom(backgroundColor: Colors.red),
                     onPressed: () {},
                     child: Text(storyBrain.getchoice1()),
-                  )),
+                  ),
                 ),
               ),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Center(
-                      child: TextButton(
+                  padding: const EdgeInsets.all(23.0),
+                  child: TextButton(
                     style: TextButton.styleFrom(backgroundColor: Colors.blue),
                     onPressed: () {},
                     child: Text(storyBrain.getchoice2()),
-                  )),
+                  ),
                 ),
               ),
             ],
