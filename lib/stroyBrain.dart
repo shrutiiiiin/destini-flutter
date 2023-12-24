@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'story.dart';
 
 class StoryBrain {
@@ -32,39 +34,48 @@ class StoryBrain {
         choice1: 'Restart',
         choice2: '')
   ];
-  int storyNum = 0;
+  int _storyNum = 0;
+
   String getStory() {
-    return _storyData[storyNum].storyTitle;
+    return _storyData[_storyNum].storyTitle;
   }
 
   String getchoice1() {
     // return _storyData[0].choice1;
-    return _storyData[storyNum].choice1;
+    return _storyData[_storyNum].choice1;
   }
 
   String getchoice2() {
-    return _storyData[storyNum].choice2;
+    return _storyData[_storyNum].choice2;
+  }
+
+  void restart() {
+    _storyNum = 0;
   }
 
   void nextstory(int userchoice) {
-    if (storyNum == 0 && userchoice == 2) {
-      storyNum = 1;
-    } else if (storyNum == 0 && userchoice == 1) {
-      storyNum = 1;
-    } else if (storyNum == 1 && userchoice == 1) {
-      storyNum = 2;
-    } else if (storyNum == 1 && userchoice == 2) {
-      storyNum == 3;
-    } else if (storyNum == 2 && userchoice == 1) {
-      storyNum = 5;
-    } else if (storyNum == 2 && userchoice == 2) {
-      storyNum == 4;
-    } else if (storyNum == 3 || storyNum == 4 || storyNum == 5) {
+    if (_storyNum == 0 && userchoice == 2) {
+      _storyNum = 1;
+    } else if (_storyNum == 0 && userchoice == 1) {
+      _storyNum = 1;
+    } else if (_storyNum == 1 && userchoice == 1) {
+      _storyNum = 2;
+    } else if (_storyNum == 1 && userchoice == 2) {
+      _storyNum == 3;
+    } else if (_storyNum == 2 && userchoice == 1) {
+      _storyNum = 5;
+    } else if (_storyNum == 2 && userchoice == 2) {
+      _storyNum == 4;
+    } else if (_storyNum == 3 || _storyNum == 4 || _storyNum == 5) {
       restart();
     }
-    void restart() {
-      storyNum = 0;
-      userchoice = 0;
+  }
+
+  bool buttonShouldbevisible() {
+    if (_storyNum < 3) {
+      return true;
+    } else {
+      return false;
     }
   }
 }
